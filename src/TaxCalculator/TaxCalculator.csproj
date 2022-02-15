@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wpa81+wp8</AssetTargetFallback>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Prism.Forms.Extensions" Version="1.0.0-pre4" />
+    <PackageReference Include="Prism.DryIoc.Forms" Version="7.0.0.396" />
+    <PackageReference Include="Prism.Plugin.Popups" Version="2.0.0-pre4" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
+    <PackageReference Include="Refractored.MvvmHelpers" Version="1.3.0" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.3.4" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.3.4" />
+    <PackageReference Include="Mobile.BuildTools" Version="1.0.0" PrivateAssets="all" />
+    <PackageReference Include="Prism.QuickStart.MFractor.Config" Version="1.0.3" PrivateAssets="all" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Fody" Version="6.6.0">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="PropertyChanged.Fody" Version="3.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Strings\*.resx" Generator="ResXFileCodeGenerator" LastGenOutput="%(Filename).Designer.cs" />
+    <Compile Update="Strings\Resources.Designer.cs" DesignTime="true" AutoGen="true" DependentUpon="Resources.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Controls\" />
+    <None Remove="Styles\" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Fody" />
+    <None Remove="PropertyChanged.Fody" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\MainPage.xaml" />
+    <None Include="Views\SplashScreenPage.xaml" />
+    <None Include="Views\TodoItemDetail.xaml" />
+    <None Include="FodyWeavers.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
+    <Folder Include="Styles\" />
+  </ItemGroup>
+</Project>
